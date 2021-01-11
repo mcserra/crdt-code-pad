@@ -8,26 +8,31 @@ const app = express();
 const server = http.createServer(app);
 
 //initialize the WebSocket server instance
-const wss = new WebSocket.Server({ server });
+const io = require('socket.io')(server, {
+    cors: {
+        origin: "*",
+    },
+});
 const NodeCache = require( "node-cache" );
 const myCache = new NodeCache();
 
-wss.on('connection', (ws: WebSocket) => {
-
-    //connection is up, let's add a simple simple event
-    ws.on('message', (message: string) => {
-        myCache.set(1, message);
-        console.log(message);
-        wss.clients.forEach(client => {
-            console.log("sent")
-            if (client !== ws) {
-                client.send(message);
-            }
-        });
+io.on('connection', (socket: any) => {
+    socket.on('join', (data: any) => {
+        socket.join(data.room)
+        const msg = myCache.get(data.room);
+        if (msg === undefined) {
+            console.log('Updating cache')
+            myCache.set(data.room, data.message);
+        } else {
+            console.log('Sending cache value')
+            socket.emit('code-update', msg);
+        }
     });
-    if (myCache.has(1)){
-        ws.send(myCache.get(1))
-    }
+    socket.on('update', (data: any) => {
+        console.log('Received update', data)
+        myCache.set(data.room, data.message);
+        socket.to(data.room).emit('code-update', data.message);
+    });
 });
 
 //start our server
