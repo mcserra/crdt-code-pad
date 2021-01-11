@@ -1,7 +1,7 @@
 import React, {useRef} from 'react';
 import Editor, {ControlledEditor} from "@monaco-editor/react";
 import {Dropdown, DropdownButton} from "react-bootstrap";
-import {defaultLang, examples} from "./codeExamples";
+import {defaultLang, examples} from "../config/codeExamples";
 
 class CodePad extends React.Component {
 
