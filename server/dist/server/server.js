@@ -11,7 +11,6 @@ const io = require('socket.io')(server, {
         origin: "*",
     },
 });
-//const wss = new WebSocket.Server({ server });
 const NodeCache = require("node-cache");
 const myCache = new NodeCache();
 io.on('connection', (socket) => {

@@ -1,6 +1,7 @@
 import React from 'react';
 import CodePad from "./CodePad.js";
 import {io} from 'socket.io-client'
+import {examples} from "../config/codeExamples";
 
 class Wrapper extends React.Component {
 
@@ -29,11 +30,15 @@ class Wrapper extends React.Component {
         this.ws.emit('update', {room: this.room, message: this.state.code});
     }
 
+    handleLanguageChange(lang) {
+        this.setState({code: examples[lang]});
+    }
+
     render() {
         return (
             <div>
                 <div>
-                    <CodePad code={this.state.code} handleChange={(c) => this.handleCodeChange(c)}></CodePad>
+                    <CodePad handleLanguageChange={l => this.handleLanguageChange(l)} code={this.state.code} handleChange={(c) => this.handleCodeChange(c)}/>
                 </div>
             </div>
         );
