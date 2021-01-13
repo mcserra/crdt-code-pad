@@ -1,0 +1,51 @@
+.site-layout-content {
+    min-height: 280px;
+    padding: 24px;
+}
+
+.logo {
+    float: left;
+    width: 120px;
+    height: 31px;
+    margin: 16px 24px 16px 0;
+}
+
+.ant-row-rtl .logo {
+    float: right;
+    margin: 16px 0 16px 24px;
+}
+
+[data-theme="dark"] .site-layout-content {
+}
+
+.gutter-box {
+    padding: 8px 0;
+}
+
+[data-theme="dark"] .gutter-box {
+}
+
+.gutter-row, .title {
+    height: 450px;
+}
+
+.title {
+    display: flex;
+    padding-left: 50px;
+    align-items: center;
+}
+
+h1 {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 100px;
+    font-weight: bold;
+    background-color: #ff4a4a;
+    letter-spacing: -1px;
+    color: #f2f2f2;
+    line-height: 1;
+    text-align: center;
+}
+
+.header {
+    padding: 0px;
+}

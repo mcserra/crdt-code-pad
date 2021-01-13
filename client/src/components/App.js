@@ -1,7 +1,7 @@
 import './App.css';
-import Wrapper from "./Wrapper";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
-import Banner from "./landing/Banner";
+import Homepage from "./homepage/Homepage";
+import Wrapper from "./Wrapper";
 
 function App() {
   return (

@@ -1,8 +1,7 @@
-import React, {useRef} from 'react';
-import Editor, {ControlledEditor} from "@monaco-editor/react";
-import {Dropdown, DropdownButton} from "react-bootstrap";
+import React from 'react';
+import {ControlledEditor} from "@monaco-editor/react";
 import {defaultLang, examples} from "../config/codeExamples";
-import {Select, Space, Avatar} from "antd";
+import {Avatar, Select, Space} from "antd";
 import 'antd/dist/antd.css';
 import './CodePad.css'
 
