@@ -7,7 +7,23 @@
     float: left;
     width: 120px;
     height: 31px;
-    margin: 16px 24px 16px 0;
+}
+
+.add-btn {
+    height: 50px;
+    width: 50px;
+    color: white;
+    background: #DDDDDE;
+    opacity: 50%;
+}
+
+#ts-particles {
+    height: 100%;
+}
+
+.title-holder {
+    background: #DDDDD;
+    height: 100%;
 }
 
 .ant-row-rtl .logo {
@@ -30,9 +46,12 @@
 }
 
 .title {
-    display: flex;
     padding-left: 50px;
+    position: absolute;
+    display: flex;
     align-items: center;
+    justify-content: center;
+    opacity: 75%;
 }
 
 h1 {
