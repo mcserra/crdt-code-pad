@@ -18,7 +18,6 @@ const myCache = new NodeCache();
 
 io.on('connection', (socket: any) => {
   socket.on('join', (data: any) => {
-    console.log('got', data);
     socket.join(data.room);
     const msg = myCache.get(data.room);
     if (msg === undefined) {
@@ -34,6 +33,7 @@ io.on('connection', (socket: any) => {
     myCache.set(data.room, data.message);
     socket.to(data.room).emit('code-update', data.message);
   });
+  socket.on('exit', () => socket.disconnect(0));
 });
 
 //start our server
