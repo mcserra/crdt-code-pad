@@ -1,7 +1,8 @@
-import { Table, Tag, Space, Button, Tooltip } from 'antd';
+import { Button, Space, Table, Tag, Tooltip } from 'antd';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { PlusOutlined, SearchOutlined } from '@ant-design/icons';
+import { PlusOutlined } from '@ant-design/icons';
+import CreatePadModal from './CreatePadModal';
 
 const columns = [
   {
@@ -63,11 +64,31 @@ const data = [
 ];
 
 class PadTable extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      modalVisible: false,
+    };
+    this.changeModalVisibility = this.changeModalVisibility.bind(this);
+  }
+
+  changeModalVisibility() {
+    this.setState({ modalVisible: !this.state.modalVisible });
+  }
+
   render() {
     return (
       <div style={{ width: '100%' }}>
+        <CreatePadModal visible={this.state.modalVisible} hideModal={this.changeModalVisibility} />
         <Tooltip title='Add Pad' placement='top'>
-          <Button type='primary' size={'medium'} shape={'circle'} style={{ float: 'right' }} icon={<PlusOutlined />} />
+          <Button
+            type='primary'
+            size={'medium'}
+            shape={'circle'}
+            style={{ float: 'right' }}
+            icon={<PlusOutlined />}
+            onClick={this.changeModalVisibility}
+          />
         </Tooltip>
         <Table style={{ width: '100%' }} columns={columns} dataSource={data} />
       </div>

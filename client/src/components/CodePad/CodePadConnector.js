@@ -13,7 +13,6 @@ class CodePadConnector extends React.Component {
       code: '// your code here',
       room: props.match.params.id,
     };
-    console.log('got', props.match.params.id);
     this.handleCodeChange = this.handleCodeChange.bind(this);
   }
 

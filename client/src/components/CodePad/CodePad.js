@@ -1,7 +1,7 @@
 import React from 'react';
 import AceEditor from 'react-ace';
-import { Avatar, Space, Select } from 'antd';
-import { defaultLang, defaultTheme, languages, examples, themes } from './CodeExamples';
+import { Select, Space } from 'antd';
+import { defaultLang, defaultTheme, examples, languages, themes } from './CodeExamples';
 import 'antd/dist/antd.css';
 import './CodePad.css';
 
