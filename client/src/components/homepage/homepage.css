@@ -1,70 +1,71 @@
 .site-layout-content {
-    min-height: 280px;
-    padding: 24px;
+  min-height: 280px;
+  padding: 24px;
 }
 
 .logo {
-    float: left;
-    width: 120px;
-    height: 31px;
+  float: left;
+  width: 120px;
+  height: 31px;
 }
 
 .add-btn {
-    height: 50px;
-    width: 50px;
-    color: white;
-    background: #DDDDDE;
-    opacity: 50%;
+  height: 50px;
+  width: 50px;
+  color: white;
+  background: #ddddde;
+  opacity: 50%;
 }
 
 #ts-particles {
-    height: 100%;
+  height: 100%;
 }
 
 .title-holder {
-    background: #DDDDD;
-    height: 100%;
+  background: #DDDDD;
+  height: 100%;
 }
 
 .ant-row-rtl .logo {
-    float: right;
-    margin: 16px 0 16px 24px;
+  float: right;
+  margin: 16px 0 16px 24px;
 }
 
-[data-theme="dark"] .site-layout-content {
+[data-theme='dark'] .site-layout-content {
 }
 
 .gutter-box {
-    padding: 8px 0;
+  padding: 8px 0;
 }
 
-[data-theme="dark"] .gutter-box {
+[data-theme='dark'] .gutter-box {
 }
 
-.gutter-row, .title {
-    height: 450px;
+.gutter-row,
+.title {
+  height: 450px;
 }
 
 .title {
-    padding-left: 50px;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 75%;
+  padding-left: 50px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 75%;
 }
 
 h1 {
-    font-family: 'Helvetica Neue', sans-serif;
-    font-size: 100px;
-    font-weight: bold;
-    background-color: #ff4a4a;
-    letter-spacing: -1px;
-    color: #f2f2f2;
-    line-height: 1;
-    text-align: center;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 100px;
+  font-weight: bold;
+  background-color: #ff4a4a;
+  letter-spacing: -1px;
+  color: #f2f2f2;
+  line-height: 1;
+  text-align: center;
 }
 
 .header {
-    padding: 0px;
+  padding: 0px;
 }
