@@ -1,7 +1,7 @@
 import React from 'react';
 import AceEditor from 'react-ace';
 import { Avatar, Space, Select } from 'antd';
-import { defaultLang, defaultTheme, languages, examples, themes } from '../../config/codeExamples';
+import { defaultLang, defaultTheme, languages, examples, themes } from './CodeExamples';
 import 'antd/dist/antd.css';
 import './CodePad.css';
 
@@ -63,7 +63,6 @@ class CodePad extends React.Component {
       <div>
         <div className='pad-header'>
           <Space size={'large'}>
-            <Avatar style={{ backgroundColor: '#f56a00' }}>K</Avatar>
             <Select defaultValue={defaultLang} onChange={this.handleLanguageChange} style={{ width: 120 }}>
               {languages.map((lang) => (
                 <Option key={lang} value={lang}>
@@ -89,7 +88,6 @@ class CodePad extends React.Component {
           </Space>
         </div>
         <div className='pad-container'>
-          <h2>Editor</h2>
           <AceEditor
             width='100hv'
             height='90vh'

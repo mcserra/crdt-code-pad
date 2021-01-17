@@ -1,10 +1,10 @@
 import React from 'react';
-import CodePad from './CodePad/CodePad.js';
+import CodePad from './CodePad.js';
 import { io } from 'socket.io-client';
-import { examples } from '../config/codeExamples';
-import BaseLayout from './BaseLayout';
+import { examples } from './CodeExamples';
+import BaseLayout from '../BaseLayout';
 
-class Wrapper extends React.Component {
+class CodePadConnector extends React.Component {
   ws = io('ws://127.0.0.1:8999');
 
   constructor(props) {
@@ -53,4 +53,4 @@ class Wrapper extends React.Component {
   }
 }
 
-export default Wrapper;
+export default CodePadConnector;

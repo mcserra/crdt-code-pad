@@ -8,14 +8,13 @@ const server = http.createServer(app);
 //initialize the WebSocket server instance
 const io = require('socket.io')(server, {
     cors: {
-        origin: "*",
+        origin: '*',
     },
 });
-const NodeCache = require("node-cache");
+const NodeCache = require('node-cache');
 const myCache = new NodeCache();
 io.on('connection', (socket) => {
     socket.on('join', (data) => {
-        console.log('got', data);
         socket.join(data.room);
         const msg = myCache.get(data.room);
         if (msg === undefined) {
@@ -32,6 +31,7 @@ io.on('connection', (socket) => {
         myCache.set(data.room, data.message);
         socket.to(data.room).emit('code-update', data.message);
     });
+    socket.on('exit', () => socket.disconnect(0));
 });
 //start our server
 server.listen(process.env.PORT || 8999, () => {
