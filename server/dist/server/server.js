@@ -15,6 +15,7 @@ const NodeCache = require("node-cache");
 const myCache = new NodeCache();
 io.on('connection', (socket) => {
     socket.on('join', (data) => {
+        console.log('got', data);
         socket.join(data.room);
         const msg = myCache.get(data.room);
         if (msg === undefined) {

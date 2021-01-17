@@ -2,23 +2,25 @@ import React from 'react';
 import CodePad from "./CodePad.js";
 import {io} from 'socket.io-client'
 import {examples} from "../config/codeExamples";
+import BaseLayout from "./BaseLayout";
+
 
 class Wrapper extends React.Component {
 
-    //ws = new WebSocket('ws://localhost:8999')
     ws = io('ws://127.0.0.1:8999');
-    room = "1";
 
     constructor(props) {
         super(props);
         this.state = {
-            code: '// your code here'
+            code: '// your code here',
+            room: props.match.params.id
         };
+        console.log('got', props.match.params.id);
         this.handleCodeChange = this.handleCodeChange.bind(this);
     }
 
     componentDidMount() {
-        this.ws.emit("join", {room: this.room, message: this.state.code})
+        this.ws.emit("join", {room: this.state.room, message: this.state.code})
         this.ws.on('code-update', msg => {
             console.log(msg)
             this.setState({code: msg})
@@ -27,7 +29,7 @@ class Wrapper extends React.Component {
 
     handleCodeChange(code) {
         this.setState({code: code});
-        this.ws.emit('update', {room: this.room, message: this.state.code});
+        this.ws.emit('update', {room: this.state.room, message: this.state.code});
     }
 
     handleLanguageChange(lang) {
@@ -37,9 +39,9 @@ class Wrapper extends React.Component {
     render() {
         return (
             <div>
-                <div>
+                <BaseLayout>
                     <CodePad handleLanguageChange={l => this.handleLanguageChange(l)} code={this.state.code} handleChange={(c) => this.handleCodeChange(c)}/>
-                </div>
+                </BaseLayout>
             </div>
         );
     }

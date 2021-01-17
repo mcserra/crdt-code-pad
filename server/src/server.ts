@@ -18,7 +18,8 @@ const myCache = new NodeCache();
 
 io.on('connection', (socket: any) => {
     socket.on('join', (data: any) => {
-        socket.join(data.room)
+        console.log('got', data);
+        socket.join(data.room);
         const msg = myCache.get(data.room);
         if (msg === undefined) {
             console.log('Updating cache')
