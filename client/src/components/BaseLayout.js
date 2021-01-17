@@ -1,6 +1,6 @@
 import React from 'react';
 import 'antd/dist/antd.css';
-import './layout.css';
+import './BaseLayout.css';
 import { Avatar, Layout, Menu, Tooltip } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
