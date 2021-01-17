@@ -7,4 +7,37 @@ export const examples = {
     "javascript": "alert( 'Hello, world!' );"
 }
 
-export const defaultLang = 'java'
+export const languages = [
+    'javascript',
+    'java',
+    'python',
+    'xml',
+    'ruby',
+    'sass',
+    'markdown',
+    'mysql',
+    'json',
+    'html',
+    'golang',
+    'csharp',
+    'elixir',
+    'typescript',
+    'css'
+  ];
+
+export const themes = [
+    'monokai',
+    'github',
+    'tomorrow',
+    'kuroir',
+    'twilight',
+    'xcode',
+    'textmate',
+    'solarized_dark',
+    'solarized_light',
+    'terminal'
+  ];
+
+export const defaultTheme = 'monokai';
+
+export const defaultLang = 'java';

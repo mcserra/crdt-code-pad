@@ -1,5 +1,5 @@
 import React from 'react';
-import CodePad from "./CodePad.js";
+import CodePad from "./CodePad/CodePad.js";
 import {io} from 'socket.io-client'
 import {examples} from "../config/codeExamples";
 import BaseLayout from "./BaseLayout";
@@ -40,7 +40,7 @@ class Wrapper extends React.Component {
         return (
             <div>
                 <BaseLayout>
-                    <CodePad handleLanguageChange={l => this.handleLanguageChange(l)} code={this.state.code} handleChange={(c) => this.handleCodeChange(c)}/>
+                    <CodePad handleLanguageChange={(language)=> this.handleLanguageChange(language)} code={this.state.code} handleChange={(code) => this.handleCodeChange(code)}/>
                 </BaseLayout>
             </div>
         );
