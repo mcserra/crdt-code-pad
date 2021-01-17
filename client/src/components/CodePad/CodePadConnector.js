@@ -1,11 +1,11 @@
 import React from 'react';
-import CodePad from "./CodePad/CodePad.js";
+import CodePad from "./CodePad.js";
 import {io} from 'socket.io-client'
-import {examples} from "../config/codeExamples";
-import BaseLayout from "./BaseLayout";
+import {examples} from "../../config/codeExamples";
+import BaseLayout from "../Layout/BaseLayout";
 
 
-class Wrapper extends React.Component {
+class CodePadConnector extends React.Component {
 
     ws = io('ws://127.0.0.1:8999');
 
@@ -28,6 +28,7 @@ class Wrapper extends React.Component {
     }
 
     handleCodeChange(code) {
+        console.log("changed to: ", code)
         this.setState({code: code});
         this.ws.emit('update', {room: this.state.room, message: this.state.code});
     }
@@ -47,4 +48,4 @@ class Wrapper extends React.Component {
     }
 }
 
-export default Wrapper;
+export default CodePadConnector;

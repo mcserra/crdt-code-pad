@@ -1,11 +1,11 @@
 import React from 'react';
 import 'antd/dist/antd.css';
-import './homepage2.css'
+import './Homepage.css'
 import {Row} from 'antd';
 import PadTable from "./PadTable";
-import BaseLayout from "../BaseLayout";
+import BaseLayout from "../Layout/BaseLayout";
 
-class Homepage2 extends React.Component {
+class Homepage extends React.Component {
 
     render() {
         return (
@@ -22,4 +22,4 @@ class Homepage2 extends React.Component {
     }
 }
 
-export default Homepage2;
+export default Homepage;
