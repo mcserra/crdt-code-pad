@@ -25,6 +25,10 @@ class Wrapper extends React.Component {
     });
   }
 
+  componentWillUnmount() {
+    this.ws.emit('exit');
+  }
+
   handleCodeChange(code) {
     this.setState({ code: code });
     this.ws.emit('update', { room: this.state.room, message: this.state.code });
